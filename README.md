@@ -6,7 +6,8 @@ Haven is a modern, high-fidelity real estate landing page built with React and T
 
 ## 🚀 Live Demo
 
-**[View Live on Render.com](#) *(Add your deployed Render link here)***
+**[View Live on Render.com](https://haven-housing.onrender.com)**
+**[GitHub Repository](https://github.com/rajtharani77/hire-my-idea-pro)**
 
 ## ✨ Features
 
