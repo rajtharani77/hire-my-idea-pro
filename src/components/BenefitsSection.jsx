@@ -74,14 +74,10 @@ export default function BenefitsSection() {
         </div>
       </div>
 
-      {/* Pale Background Area with the stacked cards overlapping the green header */}
       <div className="bg-[#F6F9F7] w-full pb-32">
         <div className="max-w-[1000px] mx-auto px-6 flex flex-col gap-8 -mt-32 md:-mt-[180px] lg:-mt-[220px] relative z-10">
-          
-          {/* Card 1: Achieve Property Clarity */}
-          <div className="bg-white max-w-5xl w-full mx-auto rounded-[24px] grid grid-cols-1 lg:grid-cols-2 p-4 border border-black/5 shadow-md">
 
-            {/* Left Column */}
+          <div className="bg-white max-w-5xl w-full mx-auto rounded-[24px] grid grid-cols-1 lg:grid-cols-2 p-4 border border-black/5 shadow-md">
             <div className="flex flex-col gap-6 justify-between p-4 md:p-6 lg:p-8">
               <div className="flex relative text-brand-900 items-center justify-start">
                 <h3 className="max-w-xl font-medium text-xl md:text-3xl tracking-tight text-brand-900">
@@ -103,8 +99,6 @@ export default function BenefitsSection() {
                 </li>
               </ul>
             </div>
-            
-            {/* Right Column - Visualization */}
             <div className="bg-gradient-to-b from-[#EFF6F0] to-[#9DC8A3] rounded-2xl w-full h-[380px] md:h-[450px] flex flex-col items-center pt-6 overflow-hidden relative shadow-inner">
                <div className="relative flex items-center justify-center w-full h-[160px] z-10 pointer-events-none mt-2">
                   <motion.img 
@@ -186,10 +180,7 @@ export default function BenefitsSection() {
                </div>
             </div>
           </div>
-
-          {/* Card 2: Proactive Neighborhood Filtering */}
           <div className="bg-white max-w-5xl mx-auto rounded-[24px] grid grid-cols-1 lg:grid-cols-2 p-4 border border-black/5 shadow-sm">
-            {/* Left Column */}
             <div className="flex flex-col gap-6 justify-between p-4 md:p-6 lg:p-8">
               <div className="flex relative text-brand-900 items-center justify-start">
                 <h3 className="max-w-xl font-medium text-xl md:text-3xl tracking-tight text-brand-900">
@@ -211,13 +202,10 @@ export default function BenefitsSection() {
                 </li>
               </ul>
             </div>
-            
-            {/* Right Column - Marquee Visualization */}
             <div className="bg-gradient-to-b overflow-hidden from-[#FFF0F0] to-[#FFC2D0] rounded-2xl w-full h-[380px] md:h-[450px] relative shadow-inner">
                <div className="w-[150%] h-full mt-[3rem] md:mt-[6rem] ml-[-25%] -rotate-[15deg]">
                   <div className="flex flex-col gap-5 w-full overflow-hidden py-4">
-                     
-                     {/* Marquee Row 1 */}
+      
                      <div className="relative w-full h-[45px] flex items-center overflow-hidden">
                         <motion.div 
                            className="flex items-center gap-4 w-max"
@@ -235,7 +223,6 @@ export default function BenefitsSection() {
                         </motion.div>
                      </div>
                      
-                     {/* Marquee Row 2 (Reverse direction, Negative pills) */}
                      <div className="relative w-full h-[45px] flex items-center overflow-hidden">
                         <motion.div 
                            className="flex items-center gap-4 w-max"
@@ -253,7 +240,6 @@ export default function BenefitsSection() {
                         </motion.div>
                      </div>
                      
-                     {/* Marquee Row 3 */}
                      <div className="relative w-full h-[45px] flex items-center overflow-hidden">
                         <motion.div 
                            className="flex items-center gap-4 w-max"
@@ -276,9 +262,7 @@ export default function BenefitsSection() {
             </div>
           </div>
 
-          {/* Card 3: Real Financial Outcomes for Your Family */}
           <div className="bg-white max-w-5xl mx-auto rounded-[24px] grid grid-cols-1 lg:grid-cols-2 p-4 border border-black/5 shadow-sm">
-            {/* Left Column */}
             <div className="flex flex-col gap-6 justify-between p-4 md:p-6 lg:p-8">
               <div className="flex relative text-brand-900 items-center justify-start">
                 <h3 className="max-w-xl font-medium text-xl md:text-3xl tracking-tight text-brand-900">
@@ -301,7 +285,6 @@ export default function BenefitsSection() {
               </ul>
             </div>
             
-            {/* Right Column - Visualization */}
             <div className="flex items-center justify-center p-0 md:p-2">
                <div className="bg-gray-100 rounded-2xl w-full h-[350px] md:h-[450px] shadow-inner overflow-hidden">
                   <div 
