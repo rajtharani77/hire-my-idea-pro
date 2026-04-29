@@ -5,33 +5,25 @@ export default function CTAImageBanner() {
     <div className="w-full max-w-6xl mx-auto px-4 md:px-8 my-16 md:my-24">
       <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-gray-900 shadow-2xl">
         
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000" 
             alt="Family in new home" 
             className="w-full h-full object-cover"
           />
-          {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/50 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
-
-        {/* Decorative Thin Outline Accents (Abstract shapes) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Left abstract curve */}
           <svg className="absolute -left-10 -top-10 w-64 h-64 opacity-30 text-white" viewBox="0 0 200 200" fill="none">
             <path d="M0,100 C50,100 100,50 100,0" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
             <path d="M-20,120 C60,120 120,60 120,-20" stroke="currentColor" strokeWidth="1" />
           </svg>
-          
-          {/* Right abstract house outline */}
+        
           <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-40 text-white translate-x-10 translate-y-10" viewBox="0 0 200 200" fill="none">
             <path d="M100,20 L180,90 L180,180 L20,180 L20,90 Z" stroke="currentColor" strokeWidth="1.5" />
             <path d="M140,90 L140,180 M60,90 L60,180" stroke="currentColor" strokeWidth="0.5" />
           </svg>
         </div>
-
-        {/* Content */}
         <div className="relative z-10 w-full h-full p-10 md:p-16 lg:p-24 flex flex-col justify-center">
           <div className="max-w-xl text-left flex flex-col items-start">
             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-8 tracking-tight">
