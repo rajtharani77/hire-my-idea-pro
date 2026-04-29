@@ -8,7 +8,7 @@ import BenefitsSection from './components/BenefitsSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import ComparisonSection from './components/ComparisonSection';
 import PricingSection from './components/PricingSection';
-import FaqSection from './components/FAQSection';
+import FaqSection from './components/FaqSection';
 import HeroCarouselSection from './components/HeroCarouselSection';
 import CTAImageBanner from './components/CTAImageBanner';
 import Footer from './components/Footer';
