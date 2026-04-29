@@ -96,12 +96,8 @@ const MegaMenuDropdown = ({ title, items, feature }) => {
         {title}
         <ChevronDown className="w-4 h-4 text-gray-400 group-hover/navlink:rotate-180 transition-transform duration-200" />
       </button>
-
-      {/* Floating Panel */}
       <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/navlink:opacity-100 group-hover/navlink:visible transition-all duration-300 z-50">
         <div className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-gray-100/50 p-6 flex gap-8 w-max max-w-[900px] overflow-hidden relative">
-          
-          {/* Menu Items Grid */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-3 max-w-[540px]">
             {items.map((item, i) => (
               <a key={i} href="#" className="flex items-start gap-3.5 p-3 -m-3 rounded-2xl hover:bg-gray-50/80 transition-colors group/item">
@@ -119,18 +115,13 @@ const MegaMenuDropdown = ({ title, items, feature }) => {
               </a>
             ))}
           </div>
-
-          {/* Featured Card */}
           <div className="w-[280px] flex-shrink-0 rounded-[20px] overflow-hidden relative group/card cursor-pointer shadow-sm">
             <img 
               src={feature.image} 
               alt={feature.title} 
               className="w-full h-full absolute inset-0 object-cover group-hover/card:scale-105 transition-transform duration-700" 
             />
-            {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/5"></div>
-            
-            {/* Card Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <div className="text-white text-base font-bold leading-snug pr-4">
                 {feature.title}
@@ -150,7 +141,6 @@ const MegaMenuDropdown = ({ title, items, feature }) => {
 export default function Navbar() {
   return (
     <nav className="w-full px-6 md:px-12 flex items-center justify-between border-b border-gray-100/50 bg-surface/80 backdrop-blur-md sticky top-0 z-50">
-      {/* Logo */}
       <div className="flex items-center gap-2 cursor-pointer py-6">
         <div className="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white shadow-sm">
           <Home className="w-6 h-6" />
@@ -159,8 +149,6 @@ export default function Navbar() {
           Haven
         </span>
       </div>
-
-      {/* Center Links (Desktop) */}
       <div className="hidden lg:flex items-center gap-8 h-full">
         <MegaMenuDropdown title="Buy" items={buyItems} feature={featureCards.buy} />
         <MegaMenuDropdown title="Rent" items={rentItems} feature={featureCards.rent} />
@@ -168,8 +156,6 @@ export default function Navbar() {
         <MegaMenuDropdown title="Agents" items={agentItems} feature={featureCards.agents} />
         <MegaMenuDropdown title="Resources" items={resourceItems} feature={featureCards.resources} />
       </div>
-
-      {/* Right Actions */}
       <div className="flex items-center gap-6 py-6">
         <button className="hidden md:block text-[15px] font-medium text-gray-600 hover:text-gray-900 transition-colors">
           Sign in

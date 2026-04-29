@@ -1,8 +1,8 @@
 import React from 'react';
 
 const CheckIcon = () => (
-  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#A3D977] mx-auto">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F3824" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-500 mx-auto">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-brand-900" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
   </div>
@@ -29,9 +29,7 @@ export default function ComparisonSection() {
   return (
     <section className="w-full bg-white py-20 relative flex justify-center px-4 md:px-8">
       
-      <div className="w-full max-w-4xl bg-[#365741] rounded-[32px] p-8 md:p-16 shadow-2xl flex flex-col items-center">
-        
-        {/* Header */}
+      <div className="w-full max-w-4xl bg-brand-900 rounded-[32px] p-8 md:p-16 shadow-2xl flex flex-col items-center">
         <div className="text-center mb-8">
           <h2 className="text-white text-3xl md:text-[2.75rem] font-medium mb-6 tracking-tight leading-tight">
             Haven Real Estate App<br/>vs. The Rest
@@ -42,26 +40,21 @@ export default function ComparisonSection() {
           </button>
         </div>
 
-        {/* Table Container */}
         <div className="w-full mt-8 text-left">
           
-          {/* Header Row */}
           <div className="grid grid-cols-[2fr_1fr_1fr_1fr] md:grid-cols-[3fr_1fr_1fr_1fr] items-end pb-6 border-b border-white/20">
-            <div></div> {/* Empty top-left cell */}
+            <div></div> 
             
-            {/* Haven Logo */}
             <div className="flex justify-center">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#A3D977] flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-[3px] border-white transform -translate-y-2 transition-transform hover:scale-105">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F3824" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-500 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-[3px] border-white transform -translate-y-2 transition-transform hover:scale-105">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-brand-900" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
               </div>
             </div>
-
-            {/* Competitor 1 Logo (Search) */}
             <div className="flex justify-center">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#486D51] flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-[3px] border-white transform -translate-y-2 transition-transform hover:scale-105">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-800 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-[3px] border-white transform -translate-y-2 transition-transform hover:scale-105">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -69,9 +62,8 @@ export default function ComparisonSection() {
               </div>
             </div>
 
-            {/* Competitor 2 Logo (Location) */}
             <div className="flex justify-center">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#486D51] flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-[3px] border-white transform -translate-y-2 transition-transform hover:scale-105">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-800 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-[3px] border-white transform -translate-y-2 transition-transform hover:scale-105">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
@@ -79,8 +71,6 @@ export default function ComparisonSection() {
               </div>
             </div>
           </div>
-
-          {/* Data Rows */}
           <div className="flex flex-col">
             {features.map((feature, index) => (
               <div 
@@ -89,22 +79,16 @@ export default function ComparisonSection() {
                   index !== features.length - 1 ? 'border-b border-white/10' : ''
                 }`}
               >
-                {/* Feature Name */}
                 <div className="text-white text-sm md:text-[15px] font-medium pr-4">
                   {feature.name}
                 </div>
                 
-                {/* Haven */}
                 <div className="text-center">
                   {feature.haven ? <CheckIcon /> : <CrossIcon />}
                 </div>
-                
-                {/* Competitor 1 */}
                 <div className="text-center">
                   {feature.comp1 ? <CheckIcon /> : <CrossIcon />}
                 </div>
-                
-                {/* Competitor 2 */}
                 <div className="text-center">
                   {feature.comp2 ? <CheckIcon /> : <CrossIcon />}
                 </div>

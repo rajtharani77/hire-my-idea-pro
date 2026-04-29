@@ -14,12 +14,8 @@ const FooterLink = ({ href, children }) => (
 export default function Footer() {
   return (
     <footer className="w-full max-w-6xl mx-auto px-4 md:px-8 mb-8">
-      <div className="bg-[#2C4835] rounded-[2rem] md:rounded-[3rem] px-8 py-12 md:px-16 md:py-16 w-full flex flex-col">
-        
-        {/* Top Section: 3 Columns */}
+      <div className="bg-brand-900 rounded-[2rem] md:rounded-[3rem] px-8 py-12 md:px-16 md:py-16 w-full flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
-          {/* Column 1: Explore More */}
           <div className="lg:col-span-3 flex flex-col">
             <h3 className="text-white font-bold text-sm mb-6 tracking-wide">Explore More</h3>
             <ul className="space-y-4">
@@ -30,8 +26,6 @@ export default function Footer() {
               <FooterLink href="#">Mortgage Help</FooterLink>
             </ul>
           </div>
-          
-          {/* Column 2: About */}
           <div className="lg:col-span-3 flex flex-col">
             <h3 className="text-white font-bold text-sm mb-6 tracking-wide">About</h3>
             <ul className="space-y-4">
@@ -42,12 +36,10 @@ export default function Footer() {
               <FooterLink href="#">Privacy Policy</FooterLink>
             </ul>
           </div>
-
-          {/* Column 3: Newsletter & Logo */}
           <div className="lg:col-span-6 flex flex-col lg:items-start lg:pl-12 xl:pl-24">
             <div className="flex items-center gap-2 mb-6">
               <span className="text-3xl relative top-0.5">🏡</span>
-              <span className="text-2xl font-bold tracking-tight text-[#A3D977] font-display">Haven</span>
+              <span className="text-2xl font-bold tracking-tight text-brand-300 font-display">Haven</span>
             </div>
             <p className="text-white/80 text-sm mb-8 leading-relaxed max-w-sm">
               Get the latest listings and neighborhood insights sent directly to your inbox.
@@ -62,7 +54,7 @@ export default function Footer() {
               />
               <button 
                 type="submit" 
-                className="bg-white text-[#2C4835] font-semibold rounded-full px-8 py-3.5 text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
+                className="bg-white text-brand-900 font-semibold rounded-full px-8 py-3.5 text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
               >
                 Subscribe
               </button>
@@ -70,8 +62,6 @@ export default function Footer() {
           </div>
           
         </div>
-
-        {/* Bottom Section: Separator and Copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-6">
             <a href="#" className="text-white/50 hover:text-white transition-colors text-xs">Terms of Service</a>

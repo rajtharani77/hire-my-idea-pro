@@ -20,11 +20,11 @@ export default function HeroCarouselSection() {
 
   return (
     <div className="w-full md:my-24 my-8 max-w-4xl mx-auto px-4 md:px-8">
-      <div className="relative w-full bg-[#386641] rounded-[1rem] md:rounded-t-[3.5rem] md:rounded-b-[3.5rem] overflow-hidden shadow-2xl">
-        <div className="relative w-full bg-[#386641] rounded-[1rem] md:rounded-b-[50rem] overflow-hidden">
+      <div className="relative w-full bg-brand-800 rounded-[1rem] md:rounded-t-[3.5rem] md:rounded-b-[3.5rem] overflow-hidden shadow-2xl">
+        <div className="relative w-full bg-brand-800 rounded-[1rem] md:rounded-b-[50rem] overflow-hidden">
 
           <div className="h-[300px] md:h-[800px]">
-            <div className="relative w-full h-full bg-[#2C3B32] overflow-hidden">
+            <div className="relative w-full h-full bg-brand-900 overflow-hidden">
               <AnimatePresence initial={false}>
                 <motion.img
                   key={activeSlide}
@@ -42,7 +42,6 @@ export default function HeroCarouselSection() {
                 />
               </AnimatePresence>
 
-              {/* Navigation Dots Container */}
               <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-30">
                 {slides.map((_, i) => (
                   <button
@@ -58,8 +57,6 @@ export default function HeroCarouselSection() {
               </div>
             </div>
           </div>
-
-          {/* Static Overlay - Kept outside animation to prevent flickering */}
           <div className="absolute inset-0 bg-black/30 pointer-events-none z-10"></div>
           <div className="absolute -bottom-24 left-0 right-0 h-24 md:h-48 z-10 pointer-events-none bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>

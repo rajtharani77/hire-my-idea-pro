@@ -46,7 +46,7 @@ const FaqItem = ({ item, isOpen, onClick }) => {
         onClick={onClick}
         className="w-full flex items-center justify-between py-5 text-left focus:outline-none"
       >
-        <h3 className="text-sm md:text-base font-medium text-[#1F3824] pr-4">{item.question}</h3>
+        <h3 className="text-sm md:text-base font-medium text-brand-900 pr-4">{item.question}</h3>
         <span className="ml-4 shrink-0 flex items-center justify-center">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -54,7 +54,7 @@ const FaqItem = ({ item, isOpen, onClick }) => {
             height="24" 
             fill="none" 
             viewBox="0 0 24 24" 
-            className={`w-5 h-5 text-[#386641] transition-transform duration-[250ms] ease-in-out ${isOpen ? 'rotate-180' : ''}`}
+            className={`w-5 h-5 text-brand-700 transition-transform duration-[250ms] ease-in-out ${isOpen ? 'rotate-180' : ''}`}
           >
             <circle cx="12" cy="12" r="10" fill="#1F3824" className="opacity-10"/>
             <path stroke="#1F3824" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 10l-4 4-4-4"/>
@@ -67,7 +67,7 @@ const FaqItem = ({ item, isOpen, onClick }) => {
         style={{ height: `${height}px` }}
       >
         <div ref={contentRef} className="pb-6 pt-1">
-          <p className="text-[#1F3824]/70 text-[13px] md:text-sm leading-relaxed">
+          <p className="text-brand-900/70 text-[13px] md:text-sm leading-relaxed">
             {item.answer}
           </p>
         </div>
@@ -85,51 +85,41 @@ export default function FaqSection() {
 
   return (
     <div className="w-full flex flex-col items-center pt-16 pb-24 px-4 bg-white">
-      
-      {/* Top statement (outside card) */}
       <div className="max-w-4xl mx-auto w-full mb-16 md:mb-24 flex flex-col xl:flex-row items-center xl:items-start justify-between gap-6 px-4 md:px-8">
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left">
-          <h2 className="text-[#FF9DB4] font-bold text-4xl md:text-[5rem] lg:text-[7rem] leading-none tracking-tight">
+          <h2 className="text-brand-800 font-bold text-4xl md:text-[5rem] lg:text-[7rem] leading-none tracking-tight">
             100% Independent.
           </h2>
           <div className="flex flex-col md:flex-row items-center xl:items-baseline gap-4 md:gap-8 w-full mt-2">
-            <h2 className="text-[#FF9DB4] font-bold text-4xl md:text-[5rem] lg:text-[7rem] leading-none tracking-tight">
+            <h2 className="text-brand-800 font-bold text-4xl md:text-[5rem] lg:text-[7rem] leading-none tracking-tight">
               Always.
             </h2>
-            <p className="text-[#386641] text-base md:text-xl font-bold max-w-[400px] text-center md:text-left leading-snug">
-              We <span className="text-[#AEB93E]">never monetize</span> through hidden fees, biased agent placements, or ads — so <span className="text-[#AEB93E]">you can trust</span> our recommendations are always aligned with our homebuyers.
+            <p className="text-brand-700 text-base md:text-xl font-bold max-w-[400px] text-center md:text-left leading-snug">
+              We <span className="text-brand-500">never monetize</span> through hidden fees, biased agent placements, or ads — so <span className="text-brand-500">you can trust</span> our recommendations are always aligned with our homebuyers.
             </p>
           </div>
         </div>
       </div>
-
-      {/* Centered FAQ card */}
       <div className="w-full max-w-5xl mx-auto px-4">
-        <section className="w-full bg-[#FFF9EB] rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-16 lg:p-20 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+        <section className="w-full bg-brand-50 rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-16 lg:p-20 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
           
           <div className="max-w-4xl mx-auto flex flex-col items-center">
-            
-            {/* Title & Icon */}
             <div className="flex flex-col items-center justify-center mb-8 relative">
               <div className="flex items-center justify-center relative">
-                <h2 className="text-[#1F3824] max-w-lg font-medium text-2xl md:text-4xl text-center leading-tight">
+                <h2 className="text-brand-900 max-w-lg font-medium text-2xl md:text-4xl text-center leading-tight">
                   Frequently Asked Questions
                 </h2>
               </div>
             </div>
-
-            {/* CTA button */}
             <div className="flex justify-center mb-16">
               <a 
                 href="#" 
-                className="inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base bg-[#1F3824] text-white hover:bg-[#1F3824]/90 shadow-md outline-none"
+                className="inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base bg-brand-900 text-white hover:bg-brand-800 shadow-md outline-none"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 Download App
               </a>
             </div>
-
-            {/* List of FAQ rows */}
             <div className="w-full flex flex-col">
               {faqData.map((item, index) => (
                 <FaqItem 

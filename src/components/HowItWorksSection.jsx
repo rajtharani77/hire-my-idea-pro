@@ -3,18 +3,13 @@ import { motion } from 'framer-motion';
 
 const ScanAnimation = ({ image }) => (
   <div className="relative w-full h-[200px] flex items-center justify-center">
-    {/* Scan frame corners (wide) */}
     <div className="absolute top-2 left-6 w-6 h-6 border-t-[1.5px] border-l-[1.5px] border-gray-400/50 rounded-tl-lg"></div>
     <div className="absolute top-2 right-6 w-6 h-6 border-t-[1.5px] border-r-[1.5px] border-gray-400/50 rounded-tr-lg"></div>
     <div className="absolute bottom-2 left-6 w-6 h-6 border-b-[1.5px] border-l-[1.5px] border-gray-400/50 rounded-bl-lg"></div>
     <div className="absolute bottom-2 right-6 w-6 h-6 border-b-[1.5px] border-r-[1.5px] border-gray-400/50 rounded-br-lg"></div>
-
-    {/* Floating Particles / Sparkles */}
     <motion.div animate={{ opacity: [0.2, 0.8, 0.2], scale: [0.8, 1.2, 0.8] }} transition={{ duration: 2, repeat: Infinity }} className="absolute top-6 left-12 w-2 h-2 text-brand-400">✦</motion.div>
     <motion.div animate={{ opacity: [0.3, 0.9, 0.3], scale: [0.9, 1.1, 0.9] }} transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }} className="absolute bottom-8 right-10 w-3 h-3 text-brand-300">✦</motion.div>
     <motion.div animate={{ opacity: [0.1, 0.6, 0.1] }} transition={{ duration: 3, repeat: Infinity, delay: 1 }} className="absolute top-10 right-14 w-1.5 h-1.5 rounded-full bg-brand-400"></motion.div>
-
-    {/* Main Floating Object */}
     <motion.div 
       animate={{ 
         y: [-6, 6, -6],
@@ -30,14 +25,11 @@ const ScanAnimation = ({ image }) => (
         <img src={image} alt="Property" className="w-full h-full object-cover" />
       </motion.div>
     </motion.div>
-    
-    {/* Horizontal Scan Line */}
     <motion.div
       animate={{ y: [-70, 70, -70] }}
       transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
       className="absolute top-1/2 left-4 right-4 h-[2px] bg-brand-600 shadow-[0_0_12px_3px_rgba(16,185,129,0.5)] z-20 flex items-center justify-center"
     >
-      {/* Scan line central node */}
       <div className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,1)]"></div>
     </motion.div>
   </div>
@@ -61,34 +53,27 @@ const ThumbnailLoop = ({ image }) => {
     }, 2500); 
     return () => clearInterval(interval);
   }, []);
-  
-  // Mathematical infinite sliding window loop
   const itemWidth = 64; 
   const gap = 12; 
   const stepSize = itemWidth + gap;
   const offset = -(activeIndex * stepSize);
 
   const visibleIndices = [];
-  // Render a window of 7 items (3 left, 1 center, 3 right)
   for (let i = activeIndex - 3; i <= activeIndex + 3; i++) {
     visibleIndices.push(i);
   }
 
   return (
     <div className="relative w-full h-[200px] flex flex-col items-center justify-center overflow-hidden">
-      
-      {/* Vertical Glow Ray onto center item */}
       <div className="absolute top-0 bottom-1/4 left-1/2 -translate-x-1/2 w-16 bg-gradient-to-b from-transparent via-brand-200/40 to-brand-400/20 blur-xl z-0 pointer-events-none"></div>
 
       <div className="flex items-center w-full h-[120px] relative z-10">
-        {/* Moving Infinite Track */}
         <motion.div 
           className="absolute left-1/2 top-1/2 -translate-y-1/2"
           animate={{ x: offset }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           {visibleIndices.map((i) => {
-            // Map the infinite index `i` back to a valid array index
             const logicalIndex = ((i % thumbs.length) + thumbs.length) % thumbs.length;
             const src = thumbs[logicalIndex];
             const isCenter = i === activeIndex;
@@ -100,14 +85,13 @@ const ThumbnailLoop = ({ image }) => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{
                   scale: isCenter ? 1.15 : 0.8,
-                  // Smoothly fade out edges so unmounting is invisible
                   opacity: isCenter ? 1 : Math.max(0, 0.45 - dist * 0.15),
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className={`absolute w-[64px] h-[64px] rounded-[16px] overflow-hidden bg-white border border-gray-100 ${isCenter ? 'z-20 shadow-xl ring-2 ring-white' : 'z-10'}`}
                 style={{ 
                   left: i * stepSize - (itemWidth / 2),
-                  top: - (itemWidth / 2) // center vertically around track axis
+                  top: - (itemWidth / 2)
                 }}
               >
                 <img src={src} alt="Thumbnail" className="w-full h-full object-cover" />
@@ -116,9 +100,7 @@ const ThumbnailLoop = ({ image }) => {
           })}
         </motion.div>
       </div>
-      
-      {/* Validation Status Pill */}
-      <div className="mt-6 bg-[#f0fdf4] text-brand-700 px-4 py-1.5 rounded-full text-[11px] font-bold flex items-center gap-1.5 shadow-sm border border-brand-100 z-20">
+      <div className="mt-6 bg-brand-50 text-brand-700 px-4 py-1.5 rounded-full text-[11px] font-bold flex items-center gap-1.5 shadow-sm border border-brand-100 z-20">
         <div className="w-3 h-3 rounded-full bg-brand-100 flex items-center justify-center">
           <div className="w-1.5 h-1.5 bg-brand-500 rounded-full"></div>
         </div>
@@ -137,14 +119,10 @@ const StackReveal = ({ image }) => {
     "Seaside Cottage",
     "Urban Studio Apartment"
   ];
-
-  // Duplicate for seamless marquee
   const marqueeItems = [...textItems, ...textItems];
 
   return (
     <div className="relative w-full h-[200px] flex items-center justify-center overflow-hidden">
-      
-      {/* Background Vertical Marquee (Scrolling text pills) */}
       <div className="absolute inset-0 flex items-center justify-center z-0">
         <motion.div 
           className="flex flex-col gap-3 w-[70%]"
@@ -163,25 +141,16 @@ const StackReveal = ({ image }) => {
           ))}
         </motion.div>
       </div>
-
-      {/* Soft edge gradients to mask the scrolling list */}
       <div className="absolute top-0 left-0 right-0 h-[40px] bg-gradient-to-b from-[#fcfdfc] to-transparent pointer-events-none z-10"></div>
       <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#fcfdfc] to-transparent pointer-events-none z-10"></div>
-
-      {/* Foreground Static 3-Image Fanned Stack */}
       <div className="relative w-full h-full flex items-center justify-center z-20 pointer-events-none">
         <div className="relative flex items-center justify-center mt-2">
-          {/* Left Image */}
           <div className="absolute w-[70px] h-[90px] rounded-2xl border-[3px] border-white overflow-hidden shadow-lg transform -translate-x-12 -rotate-12 bg-white">
              <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" />
-          </div>
-          
-          {/* Right Image */}
+          </div>         
           <div className="absolute w-[70px] h-[90px] rounded-2xl border-[3px] border-white overflow-hidden shadow-lg transform translate-x-12 rotate-12 bg-white">
              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" />
           </div>
-          
-          {/* Center Main Image */}
           <div className="relative w-[85px] h-[110px] rounded-2xl border-[3px] border-white overflow-hidden shadow-2xl z-30 bg-white">
              <img src={image} className="w-full h-full object-cover" />
              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-2">
@@ -243,7 +212,7 @@ const StepCard = ({ step, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
-      className="bg-[#fcfdfc] hover:bg-white transition-all duration-500 rounded-[32px] p-8 md:p-10 flex flex-col items-center text-center h-full border border-gray-50 hover:border-gray-100 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] group min-h-[460px]"
+      className="bg-surface hover:bg-white transition-all duration-500 rounded-[32px] p-8 md:p-10 flex flex-col items-center text-center h-full border border-gray-50 hover:border-gray-100 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] group min-h-[460px]"
     >
       <h3 className="text-[17px] font-bold text-gray-900 mb-6">{step.title}</h3>
       
