@@ -1,6 +1,6 @@
 # Haven - Premium Real Estate Platform
 
-![Haven Preview](https://drive.google.com/file/d/1mv9Zlj2vfJ50RVOpKyFuwfanD4NckBo1/view?usp=sharing)
+**[View Preview](https://drive.google.com/file/d/1mv9Zlj2vfJ50RVOpKyFuwfanD4NckBo1/view?usp=sharing)**
 
 Haven is a modern, high-fidelity real estate landing page built with React and Tailwind CSS. It features a premium design system, smooth animations, and complex UI components such as floating mega-menus and dynamic property carousels.
 
