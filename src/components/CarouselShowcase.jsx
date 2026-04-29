@@ -66,14 +66,14 @@ export default function CarouselShowcase() {
   const activeListing = listings[activeIndex];
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto mt-12 mb-20 flex flex-col items-center justify-center overflow-hidden min-h-[850px] pointer-events-none">
-      <div className="text-center z-10 mb-12 pointer-events-auto relative">
-        <h2 className="text-[32px] md:text-[40px] leading-tight font-display font-bold text-gray-900 mb-4 max-w-2xl mx-auto">
+    <div className="relative w-full max-w-6xl mx-auto mt-8 md:mt-12 mb-12 md:mb-20 flex flex-col items-center justify-center overflow-hidden min-h-[700px] md:min-h-[850px] pointer-events-none">
+      <div className="text-center z-10 mb-8 md:mb-12 pointer-events-auto relative px-4">
+        <h2 className="text-[28px] md:text-[40px] leading-tight font-display font-bold text-gray-900 mb-4 max-w-2xl mx-auto">
           Expert-Backed Property Insights
         </h2>
       </div>
 
-      <div className="relative flex justify-center items-start w-full max-w-4xl h-[700px]">
+      <div className="relative flex justify-center items-start w-full max-w-4xl h-[600px] md:h-[700px]">
         <div className="absolute top-[80px] left-0 right-0 h-[200px] flex justify-center items-center z-10">
           {listings.map((item, index) => {
             let offset = index - activeIndex;
@@ -114,9 +114,9 @@ export default function CarouselShowcase() {
             );
           })}
         </div>
-        <div className="relative w-[340px] h-[680px] bg-gray-50 border-[10px] border-surface-dark rounded-[56px] shadow-2xl z-20 overflow-hidden flex flex-col pointer-events-auto bg-transparent">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[30px] bg-surface-dark rounded-b-3xl z-40"></div>
-          <div className="h-[240px] w-full shrink-0 relative z-10 bg-transparent"></div>
+        <div className="relative w-[300px] md:w-[340px] h-[600px] md:h-[680px] bg-gray-50 border-[8px] md:border-[10px] border-surface-dark rounded-[48px] md:rounded-[56px] shadow-2xl z-20 overflow-hidden flex flex-col pointer-events-auto bg-transparent shrink-0">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100px] md:w-[120px] h-[24px] md:h-[30px] bg-surface-dark rounded-b-[20px] md:rounded-b-3xl z-40"></div>
+          <div className="h-[200px] md:h-[240px] w-full shrink-0 relative z-10 bg-transparent"></div>
           <div className="flex-1 w-full relative z-30 overflow-hidden">
             <AnimatePresence initial={false}>
               <motion.div
@@ -127,9 +127,9 @@ export default function CarouselShowcase() {
                 transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
                 className="absolute inset-0 pt-12 px-6 flex flex-col w-full h-full bg-white rounded-t-[40px] shadow-[0_-20px_40px_rgba(0,0,0,0.06)] z-20"
               >
-                <div className="mb-6 text-center">
-                  <h3 className="text-[22px] font-bold text-gray-900 leading-snug mb-1">{activeListing.title}</h3>
-                  <p className="text-[14px] text-gray-500 font-medium">{activeListing.brand}</p>
+                <div className="mb-4 md:mb-6 text-center">
+                  <h3 className="text-[18px] md:text-[22px] font-bold text-gray-900 leading-snug mb-1">{activeListing.title}</h3>
+                  <p className="text-[13px] md:text-[14px] text-gray-500 font-medium">{activeListing.brand}</p>
                 </div>
                 <div className="flex items-center justify-between mb-8 px-2">
                   <div className="flex items-center gap-2">

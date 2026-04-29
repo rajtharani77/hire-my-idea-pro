@@ -140,8 +140,8 @@ const MegaMenuDropdown = ({ title, items, feature }) => {
 
 export default function Navbar() {
   return (
-    <nav className="w-full px-6 md:px-12 flex items-center justify-between border-b border-gray-100/50 bg-surface/80 backdrop-blur-md sticky top-0 z-50">
-      <div className="flex items-center gap-2 cursor-pointer py-6">
+    <nav className="w-full px-4 md:px-12 flex items-center justify-between border-b border-gray-100/50 bg-surface/80 backdrop-blur-md sticky top-0 z-50">
+      <div className="flex items-center gap-2 cursor-pointer py-4 md:py-6">
         <div className="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white shadow-sm">
           <Home className="w-6 h-6" />
         </div>
@@ -156,13 +156,13 @@ export default function Navbar() {
         <MegaMenuDropdown title="Agents" items={agentItems} feature={featureCards.agents} />
         <MegaMenuDropdown title="Resources" items={resourceItems} feature={featureCards.resources} />
       </div>
-      <div className="flex items-center gap-6 py-6">
+      <div className="flex items-center gap-6 py-4 md:py-6">
         <button className="hidden md:block text-[15px] font-medium text-gray-600 hover:text-gray-900 transition-colors">
           Sign in
         </button>
-        <button className="bg-brand-900 hover:bg-brand-800 text-white px-6 py-2.5 rounded-full text-[15px] font-semibold transition-all shadow-sm flex items-center gap-2">
+        <button className="bg-brand-900 hover:bg-brand-800 text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all shadow-sm flex items-center gap-1.5 md:gap-2">
           Get Haven
-          <span className="text-xl leading-none -mt-0.5">&rarr;</span>
+          <span className="text-lg md:text-xl leading-none -mt-0.5">&rarr;</span>
         </button>
       </div>
     </nav>

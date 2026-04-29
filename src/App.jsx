@@ -17,7 +17,7 @@ function App() {
     <div className="min-h-screen bg-surface font-sans overflow-x-hidden">
       <Navbar />
 
-      <main className="flex flex-col items-center pt-24 md:pt-32 w-full text-center relative z-10">
+      <main className="flex flex-col items-center pt-10 md:pt-32 w-full text-center relative z-10">
         <div className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center">
           <TrustRow />
 
